@@ -5,14 +5,14 @@ function renderCategories() {
   const grid = document.getElementById("category-grid");
 
   const categoryImages = {
-    Burgers: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=60",
-    Pizza: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60",
-    Pasta: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=60",
-    Salads: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=60",
-    Sushi: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&q=60",
-    Snacks: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&q=60",
-    Drinks: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=60",
-    Desserts: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=60"
+    Burgers: "images/photo-1568901346375-23c9450c58cd.jpg",
+    Pizza: "images/photo-1513104890138-7c749659a591.jpg",
+    Pasta: "images/photo-1563379926898-05f4575a45d8.jpg",
+    Salads: "images/photo-1512621776951-a57141f2eefd.jpg",
+    Sushi: "images/photo-1579871494447-9811cf80d66c.jpg",
+    Snacks: "images/photo-1573080496219-bb080dd4f877.jpg",
+    Drinks: "images/photo-1544145945-f90425340c7e.jpg",
+    Desserts: "images/photo-1606313564200-e75d5e30476c.jpg"
   };
 
   CATEGORIES.slice(1).forEach(function (category) {
