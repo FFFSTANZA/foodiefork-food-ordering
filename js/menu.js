@@ -83,7 +83,7 @@ function buildFoodCard(food) {
       '</div>' +
       '<p class="food-desc">' + food.description + '</p>' +
       '<div class="food-bottom">' +
-        '<span class="price">$' + food.price.toFixed(2) + '</span>' +
+        '<span class="price">₹' + food.price.toFixed(2) + '</span>' +
         '<button class="btn btn-add" data-id="' + food.id + '">+ Add</button>' +
       '</div>' +
     '</div>';
@@ -130,7 +130,7 @@ function openModal(food) {
         '</div>' +
       '</div>' +
       '<div class="modal-footer">' +
-        '<span class="price modal-total" id="modal-total">$' + food.price.toFixed(2) + '</span>' +
+        '<span class="price modal-total" id="modal-total">₹' + food.price.toFixed(2) + '</span>' +
         '<button class="btn btn-primary" id="add-to-cart">Add to Cart</button>' +
       '</div>' +
     '</div>';
@@ -168,9 +168,9 @@ function buildSizeOptions(food) {
 
     let extra = "";
     if (size === "Medium") {
-      extra = "+$1.50";
+      extra = "+₹1.50";
     } else if (size === "Large") {
-      extra = "+$3.00";
+      extra = "+₹3.00";
     }
 
     button.innerHTML = '<strong>' + size + '</strong><small>' + extra + '</small>';
@@ -202,7 +202,7 @@ function buildToppingOptions(food) {
 
     label.innerHTML =
       '<input type="checkbox" value="' + topping.name + '">' +
-      '<span>' + topping.name + ' <small>+$' + topping.price.toFixed(2) + '</small></span>';
+      '<span>' + topping.name + ' <small>+₹' + topping.price.toFixed(2) + '</small></span>';
 
     label.querySelector("input").addEventListener("change", function (event) {
       if (event.target.checked) {
@@ -233,7 +233,7 @@ function changeQuantityInModal(change) {
 function updateModalTotal() {
   const unitPrice = calculateItemPrice(selectedFood, selectedSize, selectedToppings);
   const total = Math.round(unitPrice * quantity * 100) / 100;
-  document.getElementById("modal-total").textContent = "$" + total.toFixed(2);
+  document.getElementById("modal-total").textContent = "₹" + total.toFixed(2);
 }
 
 // Close the customization modal.

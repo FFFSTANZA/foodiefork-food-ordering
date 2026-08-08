@@ -64,7 +64,7 @@ function renderFeatured() {
         '</div>' +
         '<p class="food-desc">' + food.description + '</p>' +
         '<div class="food-bottom">' +
-          '<span class="price">$' + food.price.toFixed(2) + '</span>' +
+          '<span class="price">₹' + food.price.toFixed(2) + '</span>' +
           '<button class="btn btn-add" data-id="' + food.id + '">+ Add</button>' +
         '</div>' +
       '</div>';

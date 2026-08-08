@@ -18,7 +18,7 @@ function renderCart() {
         '<h3>' + item.name + '</h3>' +
         '<p class="cart-item-meta">' + item.size + '</p>' +
         '<p class="cart-item-meta">' + (item.toppings.length > 0 ? item.toppings.join(", ") : "No extras") + '</p>' +
-        '<p class="cart-item-price">$' + item.unitPrice.toFixed(2) + ' each</p>' +
+        '<p class="cart-item-price">₹' + item.unitPrice.toFixed(2) + ' each</p>' +
       '</div>' +
       '<div class="cart-item-actions">' +
         '<div class="qty-control small">' +
@@ -26,7 +26,7 @@ function renderCart() {
           '<span>' + item.quantity + '</span>' +
           '<button class="qty-btn" data-key="' + item.customKey + '" data-change="1">+</button>' +
         '</div>' +
-        '<p class="cart-item-line-total">$' + (item.unitPrice * item.quantity).toFixed(2) + '</p>' +
+        '<p class="cart-item-line-total">₹' + (item.unitPrice * item.quantity).toFixed(2) + '</p>' +
         '<button class="remove-btn" data-key="' + item.customKey + '">Remove</button>' +
       '</div>';
 
@@ -84,19 +84,19 @@ function updateBill() {
   const bill = calculateBill();
 
   document.getElementById("bill-box").innerHTML =
-    '<div class="bill-row"><span>Subtotal</span><span>$' + bill.subtotal.toFixed(2) + '</span></div>' +
-    '<div class="bill-row"><span>Tax (5%)</span><span>$' + bill.tax.toFixed(2) + '</span></div>' +
+    '<div class="bill-row"><span>Subtotal</span><span>₹' + bill.subtotal.toFixed(2) + '</span></div>' +
+    '<div class="bill-row"><span>Tax (5%)</span><span>₹' + bill.tax.toFixed(2) + '</span></div>' +
     '<div class="bill-row">' +
       '<span>Delivery</span>' +
-      '<span>' + (bill.delivery === 0 ? '<strong class="free">FREE</strong>' : "$" + bill.delivery.toFixed(2)) + '</span>' +
+      '<span>' + (bill.delivery === 0 ? '<strong class="free">FREE</strong>' : "₹" + bill.delivery.toFixed(2)) + '</span>' +
     '</div>' +
     (cart.length === 0 ? "" :
       '<p class="delivery-hint">' +
         (bill.delivery === 0
           ? "You unlocked free delivery!"
-          : "Spend $" + (FREE_DELIVERY_MIN - bill.subtotal).toFixed(2) + " more for free delivery") +
+          : "Spend ₹" + (FREE_DELIVERY_MIN - bill.subtotal).toFixed(2) + " more for free delivery") +
       '</p>') +
-    '<div class="bill-row total"><span>Total</span><span>$' + bill.total.toFixed(2) + '</span></div>';
+    '<div class="bill-row total"><span>Total</span><span>₹' + bill.total.toFixed(2) + '</span></div>';
 
   return bill;
 }
@@ -173,7 +173,7 @@ function validateForm() {
 // Show the confirmation modal after a successful order.
 function showConfirmation(orderNumber, total, address, payment) {
   document.getElementById("confirm-number").textContent = orderNumber;
-  document.getElementById("confirm-total").textContent = "$" + total.toFixed(2);
+  document.getElementById("confirm-total").textContent = "₹" + total.toFixed(2);
   document.getElementById("confirm-address").textContent = address;
   document.getElementById("confirm-payment").textContent = payment;
 
